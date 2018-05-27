@@ -21,10 +21,9 @@ DEVICE_PACKAGE_OVERLAYS += $(VENDOR_PATH)/overlay
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy
 
 PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/system/etc/device_features/sagit.xml:system/etc/device_features/sagit.xml \
     $(VENDOR_PATH)/system/etc/MIUI_Time.ttf:system/etc/MIUI_Time.ttf \
     $(VENDOR_PATH)/system/etc/age_gender_bg:system/etc/age_gender_bg \
-    $(VENDOR_PATH)/system/etc/android_model_facea.dat:system/etc/android_model_facea.dat \
-    $(VENDOR_PATH)/system/etc/android_model_faceg.dat:system/etc/android_model_faceg.dat \
     $(VENDOR_PATH)/system/etc/crown_156_128.bin:system/etc/crown_156_128.bin \
     $(VENDOR_PATH)/system/etc/dualcamera.png:system/etc/dualcamera.png \
     $(VENDOR_PATH)/system/etc/face_goodly_208_180:system/etc/face_goodly_208_180 \
@@ -48,6 +47,28 @@ PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/system/fonts/MiuiEx-Light.ttf:system/fonts/MiuiEx-Light.ttf \
     $(VENDOR_PATH)/system/fonts/MiuiEx-Regular.ttf:system/fonts/MiuiEx-Regular.ttf \
     $(VENDOR_PATH)/system/lib/libCameraEffectJNI.so:system/lib/libCameraEffectJNI.so \
+    $(VENDOR_PATH)/system/lib/libblurbuster.so:system/lib/libblurbuster.so \
+    $(VENDOR_PATH)/system/lib/libfiltergenerator.so:system/lib/libfiltergenerator.so \
+    $(VENDOR_PATH)/system/lib/libjni_blurbuster.so:system/lib/libjni_blurbuster.so \
+    $(VENDOR_PATH)/system/lib/libjni_chromaflash.so:system/lib/libjni_chromaflash.so \
+    $(VENDOR_PATH)/system/lib/libjni_dualcamera.so:system/lib/libjni_dualcamera.so \
+    $(VENDOR_PATH)/system/lib/libjni_filtergenerator.so:system/lib/libjni_filtergenerator.so \
+    $(VENDOR_PATH)/system/lib/libjni_hazebuster.so:system/lib/libjni_hazebuster.so \
+    $(VENDOR_PATH)/system/lib/libjni_makeupV2.so:system/lib/libjni_makeupV2.so \
+    $(VENDOR_PATH)/system/lib/libjni_optizoom.so:system/lib/libjni_optizoom.so \
+    $(VENDOR_PATH)/system/lib/libjni_seestraight.so:system/lib/libjni_seestraight.so \
+    $(VENDOR_PATH)/system/lib/libjni_sharpshooter.so:system/lib/libjni_sharpshooter.so \
+    $(VENDOR_PATH)/system/lib/libjni_stillmore.so:system/lib/libjni_stillmore.so \
+    $(VENDOR_PATH)/system/lib/libjni_trueportrait.so:system/lib/libjni_trueportrait.so \
+    $(VENDOR_PATH)/system/lib/libjni_truescanner_v2.so:system/lib/libjni_truescanner_v2.so \
+    $(VENDOR_PATH)/system/lib/libjni_ubifocus.so:system/lib/libjni_ubifocus.so \
+    $(VENDOR_PATH)/system/lib/libmorpho_group_portrait.so:system/lib/libmorpho_group_portrait.so \
+    $(VENDOR_PATH)/system/lib/libmorpho_groupshot.so:system/lib/libmorpho_groupshot.so \
+    $(VENDOR_PATH)/system/lib/libmorpho_memory_allocator.so:system/lib/libmorpho_memory_allocator.so \
+    $(VENDOR_PATH)/system/lib/libmorpho_panorama.so:system/lib/libmorpho_panorama.so \
+    $(VENDOR_PATH)/system/lib/libmorpho_panorama_gp.so:system/lib/libmorpho_panorama_gp.so \
+    $(VENDOR_PATH)/system/lib/libseestraight.so:system/lib/libseestraight.so \
+    $(VENDOR_PATH)/system/lib/libtruescanner.so:system/lib/libtruescanner.so \
     $(VENDOR_PATH)/system/lib64/libCameraEffectJNI.so:system/lib64/libCameraEffectJNI.so \
     $(VENDOR_PATH)/system/lib64/libmorpho_group_portrait.so:system/lib64/libmorpho_group_portrait.so \
     $(VENDOR_PATH)/system/lib64/libmorpho_groupshot.so:system/lib64/libmorpho_groupshot.so \
@@ -56,8 +77,16 @@ PRODUCT_COPY_FILES += \
     $(VENDOR_PATH)/system/lib64/libmorpho_panorama_gp.so:system/lib64/libmorpho_panorama_gp.so \
     $(VENDOR_PATH)/system/vendor/etc/scve/facereco/gModel.dat:system/vendor/etc/scve/facereco/gModel.dat \
     $(VENDOR_PATH)/system/vendor/etc/fonts.xml:system/vendor/etc/fonts.xml \
-    $(VENDOR_PATH)/system/vendor/lib64/libmorpho_groupshot.so:system/vendor/lib64/libmorpho_groupshot.so \
-    $(VENDOR_PATH)/system/vendor/lib64/libmorpho_group_portrait.so:system/vendor/lib64/libmorpho_group_portrait.so
+    $(VENDOR_PATH)/system/vendor/lib/libdualcameraddm.so:system/vendor/lib/libdualcameraddm.so
+
+# AptX
+PRODUCT_COPY_FILES += \
+    $(VENDOR_PATH)/system/vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so:system/vendor/lib/rfsa/adsp/capi_v2_aptX_Classic.so \
+    $(VENDOR_PATH)/system/vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so:system/vendor/lib/rfsa/adsp/capi_v2_aptX_HD.so \
+    $(VENDOR_PATH)/system/vendor/lib/libaptXHD_encoder.so:system/vendor/lib/libaptXHD_encoder.so \
+    $(VENDOR_PATH)/system/vendor/lib/libaptX_encoder.so:system/vendor/lib/libaptX_encoder.so \
+    $(VENDOR_PATH)/system/vendor/lib64/libaptXHD_encoder.so:system/vendor/lib64/libaptXHD_encoder.so \
+    $(VENDOR_PATH)/system/vendor/lib64/libaptX_encoder.so:system/vendor/lib64/libaptX_encoder.so
 
 # Google Lens
 PRODUCT_COPY_FILES += \
@@ -75,3 +104,7 @@ PRODUCT_PACKAGES += \
 # Remove packages
 PRODUCT_PACKAGES += \
     Remove
+
+# Init
+PRODUCT_PACKAGES += \
+    init.xiaomi_custom.rc
